@@ -4,6 +4,8 @@
   <artifactId>cms_exam05</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+  
+   <!-- junit依赖 -->
   	<dependency>
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
