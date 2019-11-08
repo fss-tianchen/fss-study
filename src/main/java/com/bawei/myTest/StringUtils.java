@@ -34,4 +34,19 @@ public class StringUtils {
 		Matcher matcher=p.matcher(str);
 		return matcher.find();
 	}
+	
+	/**
+	 * 
+	 * @Title: isEmail 
+	 * @Description: 验证邮件
+	 * @param str
+	 * @return
+	 * @return: boolean
+	 */
+	public static boolean isEmail(String str) {
+		String regex="^\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$";
+		Pattern p=Pattern.compile(regex);
+		Matcher matcher=p.matcher(str);
+		return matcher.find();
+	}
 }
