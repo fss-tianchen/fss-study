@@ -25,4 +25,15 @@ public class DateTest {
 		
 		System.out.println("age is "+age);
 	}
+	
+	@Test
+	public void remainDaysTest() {
+		Date date = new Date();
+		assertTrue(0==DateUtils.calculateAge(date));
+		
+		Date date2 = new Date(100, 9, 21);
+		int days = DateUtils.calculateAge(date2);
+		
+		System.out.println("days is "+days);
+	}
 }

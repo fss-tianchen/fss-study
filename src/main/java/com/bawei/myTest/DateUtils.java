@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class DateUtils {
 
+	//每天的毫秒数，毫秒*秒*分钟*小时
+	static final long millionSecondsPerDay = 1000*60*60*24;
 	
 	public static int compare(Date date1, Date date2) {
 		if(date1 == null || date2 == null) {
@@ -48,5 +50,21 @@ public class DateUtils {
 			age--;
 		}
 		return age;
+	}
+	
+	/**
+	 * 
+	 * @Title: remainDays 
+	 * @Description: 剩余多少天
+	 * @return
+	 * @return: int
+	 */
+	public static int remainDays(Date futureDate) {
+		if(futureDate.compareTo(new Date())<0) {
+			throw new RuntimeException("给定的日期不能小于当前日期" + futureDate);
+		}
+		
+		int days = (int)((futureDate.getTime() - new Date().getTime())/millionSecondsPerDay);
+		return days;
 	}
 }
